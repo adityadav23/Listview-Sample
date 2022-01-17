@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.samplelistview.network.Character
+import com.squareup.picasso.Picasso
 
-class MyAdapter( private val arrayList: ArrayList<User>):
+class MyAdapter( private val arrayList: List<Character>):
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
 
@@ -29,10 +31,10 @@ class MyAdapter( private val arrayList: ArrayList<User>):
         val profileImage = view.findViewById<ImageView>(R.id.profile_imageView)
         val name = view.findViewById<TextView>(R.id.name_textview)
 
-        fun bind(user:User){
-            name.text = user.name
-            profileImage.setImageResource(user.imageId)
-        }
+        fun bind(character: Character){
+            name.text = character.name
+
+            Picasso.get().load(character.image).into(profileImage)        }
     }
 
 }
