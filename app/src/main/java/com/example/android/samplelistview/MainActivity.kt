@@ -65,6 +65,6 @@ class MainActivity : AppCompatActivity() {
             val user = User(name[i], country[i], imageId[i])
             userArrayList.add(user)
         }
-        binding.listView.adapter = MyAdapter(this, userArrayList)
+        binding.mainRecyclerview.adapter = MyAdapter( userArrayList)
     }
 }
